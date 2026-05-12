@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Ayyin 🌸</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+    :root {
+      --bg: #120810;
+      --bg2: #1a0d14;
+      --bg3: #220f1a;
+      --pink: #e8658a;
+      --pink2: #ffacc4;
+      --pink3: #ffd6e4;
+      --text: #ffe8f0;
+      --muted: #c08090;
+      --border: #3a1525;
+    }
+ 
+    html { scroll-behavior: smooth; }
+ 
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+ 
+    /* BACK BUTTON */
+    .back-btn {
+      position: fixed;
+      top: 1.5rem; left: 1.5rem;
+      z-index: 100;
+      background: rgba(18,8,16,0.8);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      text-decoration: none;
+      backdrop-filter: blur(8px);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .back-btn:hover { color: var(--pink2); border-color: var(--pink); }
+ 
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 40%, rgba(232,101,138,0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(255,172,196,0.06) 0%, transparent 60%);
+    }
+ 
+    .floating-hearts {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+ 
+    .heart {
+      position: absolute;
+      font-size: 1rem;
+      opacity: 0;
+      animation: floatUp linear infinite;
+    }
+ 
+    @keyframes floatUp {
+      0% { opacity: 0; transform: translateY(100vh) scale(0.5); }
+      10% { opacity: 0.4; }
+      90% { opacity: 0.2; }
+      100% { opacity: 0; transform: translateY(-10vh) scale(1.2); }
+    }
+ 
+    .hero-content { position: relative; z-index: 2; }
+ 
+    .hero-for {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 0.75rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.3s forwards;
+    }
+ 
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.0;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.5s forwards;
+    }
+ 
+    .hero-name span {
+      color: var(--pink2);
+      font-style: italic;
+    }
+ 
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.7s forwards;
+    }
+ 
+    .hero-scroll {
+      font-size: 0.82rem;
+      color: var(--muted);
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1s forwards;
+    }
+ 
+    /* QUOTE SECTION */
+    .section { padding: 5rem 0; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+ 
+    .quote-section {
+      background: var(--bg2);
+      padding: 5rem 0;
+    }
+ 
+    .big-quote {
+      text-align: center;
+      position: relative;
+    }
+ 
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 8rem;
+      color: rgba(232,101,138,0.12);
+      line-height: 0.5;
+      display: block;
+      margin-bottom: 1rem;
+    }
+ 
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-style: italic;
+      color: var(--pink3);
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.8;
+    }
+ 
+    .quote-from {
+      font-size: 0.85rem;
+      color: var(--pink);
+      letter-spacing: 0.1em;
+    }
+ 
+    /* MESSAGES */
+    .messages-section { padding: 5rem 0; }
+ 
+    .messages-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+ 
+    .message-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+ 
+    .message-card:hover { border-color: var(--pink); transform: translateY(-4px); }
+ 
+    .message-card.wide { grid-column: span 2; text-align: center; }
+ 
+    .message-emoji { font-size: 2rem; margin-bottom: 1rem; display: block; }
+ 
+    .message-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--pink2);
+      margin-bottom: 0.75rem;
+    }
+ 
+    .message-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+ 
+    /* MOMENTS */
+    .moments-section {
+      background: var(--bg2);
+      padding: 5rem 0;
+    }
+ 
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+ 
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 3rem;
+    }
+ 
+    .moments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+ 
+    .moment-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: border-color 0.3s, transform 0.3s, background 0.3s;
+      position: relative;
+      overflow: hidden;
+      padding: 1rem;
+      text-align: center;
+    }
+ 
+    .moment-card:hover {
+      border-color: var(--pink);
+      transform: scale(1.03);
+      background: rgba(232,101,138,0.08);
+    }
+ 
+    .moment-emoji { font-size: 2rem; }
+    .moment-title { font-size: 0.8rem; color: var(--pink2); font-weight: 500; }
+    .moment-date { font-size: 0.72rem; color: var(--muted); }
+ 
+    /* PLACEHOLDER foto */
+    .moment-photo {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      border-radius: 16px;
+      opacity: 0.7;
+    }
+ 
+    /* LETTER */
+    .letter-section { padding: 5rem 0; }
+ 
+    .letter-wrap {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 3rem;
+      position: relative;
+    }
+ 
+    .letter-wrap::before {
+      content: '💌';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+    }
+ 
+    .letter-date {
+      font-size: 0.82rem;
+      color: var(--pink);
+      margin-bottom: 2rem;
+      letter-spacing: 0.08em;
+    }
+ 
+    .letter-body {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--pink3);
+      line-height: 2;
+      margin-bottom: 2rem;
+    }
+ 
+    .letter-body p { margin-bottom: 1.2rem; }
+ 
+    .letter-sign {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--pink2);
+      font-size: 1.1rem;
+      text-align: right;
+    }
+ 
+    /* CLOSING */
+    .closing {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: var(--bg2);
+    }
+ 
+    .closing-heart { font-size: 4rem; display: block; margin-bottom: 1.5rem; animation: pulse 2s ease-in-out infinite; }
+ 
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+ 
+    .closing-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--pink2);
+      margin-bottom: 1rem;
+    }
+ 
+    .closing-sub { color: var(--muted); font-size: 0.9rem; }
+ 
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+ 
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+ 
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .messages-grid { grid-template-columns: 1fr; }
+      .message-card.wide { grid-column: span 1; }
+      .moments-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+ 
+  <a href="../index.html" class="back-btn">← Kembali</a>
+ 
+  <!-- Floating hearts bg -->
+  <div class="floating-hearts" id="hearts"></div>
+ 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-for">Halaman spesial untuk</p>
+      <h1 class="hero-name">Ayyin<br><span>Tersayang</span></h1>
+      <p class="hero-sub">Satu halaman kecil untuk seseorang yang menempati ruang besar di hatiku.</p>
+      <p class="hero-scroll">scroll ke bawah ↓</p>
+    </div>
+  </section>
+ 
+  <!-- BIG QUOTE -->
+  <section class="quote-section">
+    <div class="container">
+      <div class="big-quote reveal">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">Kamu bukan hanya seseorang yang aku cintai. Kamu adalah alasan aku ingin menjadi versi terbaik dari diriku sendiri.</p>
+        <p class="quote-from">— Zufan, untuk Ayyin</p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- MESSAGES -->
+  <section class="messages-section">
+    <div class="container">
+      <h2 class="section-title reveal">Hal-hal yang ingin kamu tahu</h2>
+      <p class="section-sub reveal">dari seseorang yang susah mengungkapkan perasaan secara langsung 😅</p>
+      <div class="messages-grid">
+        <div class="message-card reveal">
+          <span class="message-emoji">🌙</span>
+          <h3>Kamu selalu ada di pikiranku</h3>
+          <p>Saat pagi, saat malam, bahkan saat aku lagi fokus ngoding pun, ada bagian kecil dari pikiranku yang selalu memikirkanmu.</p>
+        </div>
+        <div class="message-card reveal">
+          <span class="message-emoji">🛡️</span>
+          <h3>Aku ingin selalu melindungimu</h3>
+          <p>Tidak harus dari hal-hal besar. Kadang yang terpenting adalah hadir saat kamu butuh seseorang untuk bersandar.</p>
+        </div>
+        <div class="message-card reveal">
+          <span class="message-emoji">📈</span>
+          <h3>Kamu adalah investasi terbaikku</h3>
+          <p>Lebih dari saham manapun, lebih dari trade terbaik yang pernah aku eksekusi — memilihmu adalah keputusan paling tepat yang pernah aku buat.</p>
+        </div>
+        <div class="message-card reveal">
+          <span class="message-emoji">💻</span>
+          <h3>Kamu adalah bug favoritku</h3>
+          <p>Yang tidak ingin aku fix. Yang bikin aku debugging diri sendiri dan jadi pribadi yang lebih baik setiap harinya.</p>
+        </div>
+        <div class="message-card wide reveal">
+          <span class="message-emoji">🌸</span>
+          <h3>Terima kasih sudah ada</h3>
+          <p>Terima kasih sudah sabar dengan aku. Terima kasih sudah mau mengerti. Terima kasih sudah menjadi rumah yang selalu ingin aku pulangi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- MOMENTS -->
+  <section class="moments-section">
+    <div class="container">
+      <h2 class="section-title reveal">Momen Kita 📸</h2>
+      <p class="section-sub reveal">Kenangan yang selalu ingin aku ingat bersamamu</p>
+      <div class="moments-grid">
+        <div class="moment-card reveal">
+          <span class="moment-emoji">🌅</span>
+          <span class="moment-title">Pertama Bertemu</span>
+          <span class="moment-date">Hari yang tidak terlupakan</span>
+        </div>
+        <div class="moment-card reveal">
+          <span class="moment-emoji">🎂</span>
+          <span class="moment-title">Ulang Tahunmu</span>
+          <span class="moment-date">Hari yang selalu kutunggu</span>
+        </div>
+        <div class="moment-card reveal">
+          <span class="moment-emoji">☕</span>
+          <span class="moment-title">Ngopi Bareng</span>
+          <span class="moment-date">Ngobrol sampai lupa waktu</span>
+        </div>
+        <div class="moment-card reveal">
+          <span class="moment-emoji">🌿</span>
+          <span class="moment-title">Jalan-jalan</span>
+          <span class="moment-date">Kemana pun bersamamu terasa indah</span>
+        </div>
+        <div class="moment-card reveal">
+          <span class="moment-emoji">🌙</span>
+          <span class="moment-title">Malam Bersama</span>
+          <span class="moment-date">Momen tenang yang aku suka</span>
+        </div>
+        <div class="moment-card reveal">
+          <span class="moment-emoji">💌</span>
+          <span class="moment-title">Hari Special Kita</span>
+          <span class="moment-date">Selalu spesial</span>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:1.5rem; font-size:0.82rem; color:var(--muted);">
+        * Ganti kartu di atas dengan foto asli kamu berdua 🥰
+      </p>
+    </div>
+  </section>
+ 
+  <!-- LETTER -->
+  <section class="letter-section">
+    <div class="container">
+      <div class="letter-wrap reveal">
+        <p class="letter-date">Untukmu, Ayyin —</p>
+        <div class="letter-body">
+          <p>Aku tidak pandai merangkai kata-kata romantis secara langsung. Tapi malam ini aku ingin mencoba, lewat halaman kecil ini yang kubuat khusus untukmu.</p>
+          <p>Bersamamu, hidup terasa lebih berwarna. Kamu mengajarkan aku bahwa ada hal-hal yang lebih penting dari grafik dan kode — yaitu momen sederhana yang kita jalani bersama.</p>
+          <p>Aku ingin terus tumbuh bersamamu. Aku ingin menjadi seseorang yang layak untuk kamu banggakan. Dan aku ingin kamu tahu, setiap usaha yang aku lakukan, ada namamu di baliknya.</p>
+          <p>Terima kasih sudah ada, Ayyin. Terima kasih sudah memilih aku.</p>
+        </div>
+        <p class="letter-sign">Dengan sepenuh hati,<br>Zufan 🖤</p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- CLOSING -->
+  <div class="closing">
+    <span class="closing-heart">💕</span>
+    <p class="closing-text">I love you, Ayyin</p>
+    <p class="closing-sub">dan ini bukan sekedar kata-kata — ini adalah kode yang sudah aku commit selamanya ✨</p>
+  </div>
+ 
+  <script>
+    // Floating hearts
+    const heartsEl = document.getElementById('hearts');
+    const heartChars = ['💕','🌸','✨','💗','🌷','💖'];
+    for (let i = 0; i < 18; i++) {
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.textContent = heartChars[Math.floor(Math.random() * heartChars.length)];
+      h.style.left = Math.random() * 100 + '%';
+      h.style.fontSize = (0.7 + Math.random() * 0.8) + 'rem';
+      h.style.animationDuration = (8 + Math.random() * 12) + 's';
+      h.style.animationDelay = (Math.random() * 10) + 's';
+      heartsEl.appendChild(h);
+    }
+ 
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100);
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
+ 
