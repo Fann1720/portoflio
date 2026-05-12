@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zufan Adiwidya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">ZA<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="for-her/index.html" class="nav-special">🌸 For Her</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+  </nav>
+ 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-greeting">Halo, saya</p>
+      <h1 class="hero-name">Zufan<br><span>Adiwidya</span></h1>
+      <p class="hero-role">Vibe Coder &amp; Trader</p>
+      <div class="hero-tags">
+        <span class="htag">💻 Vibe Coding</span>
+        <span class="htag">📈 Trading</span>
+        <span class="htag">🚀 Builder</span>
+      </div>
+      <a href="#about" class="hero-btn">Kenalan yuk ↓</a>
+    </div>
+    <div class="hero-deco">
+      <div class="deco-circle c1"></div>
+      <div class="deco-circle c2"></div>
+      <div class="deco-circle c3"></div>
+    </div>
+  </section>
+ 
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-avatar">
+          <div class="avatar-ring">
+            <div class="avatar-inner">ZA</div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>Saya adalah seseorang yang percaya bahwa <em>coding dan trading</em> adalah dua seni yang membutuhkan intuisi, analisis, dan kesabaran yang sama.</p>
+          <p>Suka membangun hal-hal yang bermakna — dari tools sederhana hingga sistem yang memberikan nilai nyata. Di pasar, saya membaca grafik seperti membaca cerita.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">2+</span>
+              <span class="stat-label">Tahun Coding</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">∞</span>
+              <span class="stat-label">Semangat Belajar</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">1</span>
+              <span class="stat-label">Yang Selalu Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- SKILLS -->
+  <section class="section section-dark" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">💻</div>
+          <h3>Vibe Coding</h3>
+          <p>Membangun aplikasi dan website dengan flow yang terasa natural. Kode bukan hanya fungsi, tapi ekspresi.</p>
+          <div class="skill-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📈</div>
+          <h3>Trading</h3>
+          <p>Analisis pasar, manajemen risiko, dan eksekusi yang disiplin. Sabar adalah strategi terbaik.</p>
+          <div class="skill-tags">
+            <span>Technical Analysis</span><span>Risk Management</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🧠</div>
+          <h3>Problem Solving</h3>
+          <p>Setiap masalah punya solusi. Saya menikmati proses menemukan cara paling elegan untuk menyelesaikannya.</p>
+          <div class="skill-tags">
+            <span>Logic</span><span>Creativity</span><span>Adaptability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-num">01</div>
+          <h3>Project Alpha</h3>
+          <p>Deskripsi proyek pertamamu di sini. Ceritakan apa yang kamu bangun dan masalah apa yang diselesaikan.</p>
+          <div class="project-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <a href="#" class="project-link">Lihat project →</a>
+        </div>
+        <div class="project-card">
+          <div class="project-num">02</div>
+          <h3>Project Beta</h3>
+          <p>Deskripsi proyek kedua kamu di sini. Apa teknologi yang dipakai dan apa hasilnya.</p>
+          <div class="project-tech"><span>React</span><span>Firebase</span></div>
+          <a href="#" class="project-link">Lihat project →</a>
+        </div>
+        <div class="project-card project-card-wide">
+          <div class="project-num">03</div>
+          <h3>Trading Journal App</h3>
+          <p>Aplikasi untuk mencatat dan menganalisis hasil trading. Dibangun untuk kebutuhan pribadi, bisa dikembangkan lebih lanjut.</p>
+          <div class="project-tech"><span>JavaScript</span><span>Chart.js</span><span>LocalStorage</span></div>
+          <a href="#" class="project-link">Lihat project →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- CONTACT -->
+  <section class="section section-dark" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Contact</h2>
+      </div>
+      <div class="contact-wrap">
+        <p class="contact-intro">Punya proyek menarik atau sekadar ingin ngobrol? Saya terbuka untuk kolaborasi.</p>
+        <div class="contact-links">
+          <a href="mailto:email@kamu.com" class="contact-btn">✉️ Email Saya</a>
+          <a href="https://github.com/Fann1720" target="_blank" class="contact-btn">🐙 GitHub</a>
+          <a href="#" class="contact-btn">📱 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Made with 🖤 by Zufan Adiwidya &nbsp;·&nbsp; <a href="for-her/index.html">🌸</a></p>
+  </footer>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
+ 
