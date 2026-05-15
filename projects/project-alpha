@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Kas HIMA | Zufan Adiwidya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Tambahan style khusus halaman proyek */
+    .project-page {
+      padding-top: 120px;
+      padding-bottom: 6rem;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--accent2); }
+    .project-detail-header {
+      margin-bottom: 3rem;
+    }
+    .project-detail-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    .project-detail-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .project-detail-main p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+    .project-detail-sidebar {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      height: fit-content;
+    }
+    .project-detail-sidebar h3 {
+      font-family: var(--font-display);
+      margin-bottom: 1rem;
+    }
+    .project-detail-sidebar ul {
+      list-style: none;
+      color: var(--muted);
+    }
+    .project-detail-sidebar ul li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .project-detail-sidebar ul li:last-child { border-bottom: none; }
+
+    /* GALLERY STYLE */
+    .gallery-section {
+      margin-top: 4rem;
+    }
+    .gallery-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      aspect-ratio: 16/9;
+      cursor: pointer;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #0a0a12;
+      transition: transform 0.5s;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(10,10,18,0.9), transparent);
+      padding: 2rem 1.5rem 1rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .project-detail-content { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">ZA<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a href="../for-her/index.html" class="nav-special">🌸 For Her</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <section class="project-page section">
+    <div class="container">
+      <a href="../index.html#projects" class="back-btn">← Kembali ke Projects</a>
+      
+      <div class="project-detail-header">
+        <span class="section-num">01</span>
+        <h1>Project Kas HIMA</h1>
+        <div class="project-tech">
+          <span>PHP</span><span>PHPMyAdmin</span><span>Laravel</span>
+        </div>
+      </div>
+
+      <div class="project-detail-content">
+        <div class="project-detail-main">
+          <h2 style="font-family: var(--font-display); margin-bottom: 1rem; font-size: 1.5rem;">Tentang Proyek Ini</h2>
+          <p>Saya membuat project ini awalnya karna iseng saja, ditambah saya adalah seorang Bendahara dari organisasi maka akan sangat sulit mengatur/memberitahu ke anggota yg lain.</p>
+          <p>Jadi saya memutuskan untuk membuat project ini. Tujuannya adalah agar mempermudah saya saja, dan agar yg lain juga bisa melihat dan mengecek data mereka sendiri.</p>
+          
+          <h2 style="font-family: var(--font-display); margin-bottom: 1rem; margin-top: 2rem; font-size: 1.5rem;">Fitur Utama</h2>
+          <ul style="color: var(--muted); margin-left: 1.5rem;">
+            <li>Mahasiswa (Selain Admin) hanya dapat melihat dan mengecek data mereka sendiri.</li>
+            <li>Memudahkan Bendahara untuk menginput data masuknya uang dari setiap mahasiswa.</li>
+            <li>Melihat keseluruhan total dari uang kas yg terkumpul, dan dapat melihat mahasiswa lainya juga yg belum bayar tiap bulanya.</li>
+          </ul>
+        </div>
+
+        <div class="project-detail-sidebar">
+          <h3>Info Proyek</h3>
+          <ul>
+            <li><strong>Status:</strong> Tinggal Hosting</li>
+            <li><strong>Tahun:</strong> 2026</li>
+            <li><strong>Link:</strong> <a href="#" style="color: var(--accent2);">-</a></li>
+            <li><strong>Repo:</strong> <a href="#" style="color: var(--accent2);">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GALLERY FOTO PROJECT -->
+      <div class="gallery-section">
+        <h2>Galeri Proyek</h2>
+        <div class="gallery-grid">
+          <!-- Item Gallery 1 -->
+          <div class="gallery-item">
+            <img src="images/project-alpha-1.png" alt="Tampilan Dashboard">
+            <div class="gallery-caption">Tampilan Dashboard</div>
+          </div>
+          <!-- Item Gallery 2 -->
+          <div class="gallery-item">
+            <img src="images/project-alpha-2.png" alt="Fitur Input Kas">
+            <div class="gallery-caption">Tampilan Yang Belum Bayar</div>
+          </div>
+          <!-- Item Gallery 3 -->
+          <div class="gallery-item">
+            <img src="images/project-alpha-3.png" alt="Data Mahasiswa">
+            <div class="gallery-caption">Data Mahasiswa</div>
+          </div>
+          <!-- Item Gallery 4 -->
+          <div class="gallery-item">
+            <img src="images/project-alpha-4.png" alt="Laporan Keuangan">
+            <div class="gallery-caption">Laporan Pembayaran Kas</div>
+          </div>
+          <!-- Item Gallery 5 -->
+          <div class="gallery-item">
+            <img src="images/project-alpha-5.png" alt="Tampilan Admin">
+            <div class="gallery-caption">Tampilan Filter Mahasiswa</div>
+          </div>
+          <!-- Item Gallery 6 -->
+          <div class="gallery-item">
+            <img src="images/project-alpha-6.png" alt="Halaman Login">
+            <div class="gallery-caption">Halaman Input Kas</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Made with by Zufan Adiwidya &nbsp;·&nbsp; <a href="../for-her/index.html">Pencet 🌸</a></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
